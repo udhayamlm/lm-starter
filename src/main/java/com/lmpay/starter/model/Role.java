@@ -1,27 +1,39 @@
 package com.lmpay.starter.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "roles")
-@Data
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "role_permissions",
-            joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "permission_id"))
-    private Set<Permission> permissions = new HashSet<>();
+    public Role() {
 
-    // Constructors, getters, and setters
+    }
+
+    public Role(ERole name) {
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
+    }
 }
-

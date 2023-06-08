@@ -3,7 +3,6 @@ package com.lmpay.starter.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lmpay.starter.model.LoginRequest;
 import com.lmpay.starter.model.User;
-import com.lmpay.starter.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;

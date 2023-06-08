@@ -1,18 +1,14 @@
 package com.lmpay.starter.model;
 
+
+import jakarta.validation.constraints.NotBlank;
+
 public class LoginRequest {
+    @NotBlank
     private String username;
+
+    @NotBlank
     private String password;
-
-    public LoginRequest() {
-    }
-
-    public LoginRequest(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    // Getters and setters
 
     public String getUsername() {
         return username;
