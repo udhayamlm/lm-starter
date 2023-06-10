@@ -29,11 +29,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'org.springframework.security', name: 'spring-security-config', version: '6.1.0'
 	implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '3.0.2'
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	implementation group: 'org.json', name: 'json', version: '20210307'
+	implementation'org.json:json:20210307'
+	implementation'org.http4k:http4k-client-okhttp:4.45.0.0'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.0', {exclude group:'io.jsonwebtoken', module:'jjwt-api'}
 	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.0' , {exclude group:'io.jsonwebtoken', module:'jjwt-api'}
 	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.0'
@@ -49,7 +51,6 @@ dependencies {
 	testImplementation 'org.springframework.amqp:spring-rabbit-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
